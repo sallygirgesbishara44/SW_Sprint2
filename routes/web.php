@@ -40,7 +40,10 @@ Route::get('/updates', function () {
 
     Route::resource('/profile', 'profileController') ;
     Route::resource('/chef', 'chefController') ;
-   //make order
+    Route::resource('/Delievery', 'DelieveryController') ;
+  
+  
+    //make order
 
 
 

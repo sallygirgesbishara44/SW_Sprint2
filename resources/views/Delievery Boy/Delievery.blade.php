@@ -18,15 +18,16 @@
                    @method('PUT') --}}
                   
                
-        
+               
                    @forelse ($All_ORDERS as $ORDER)
                 
                  
                    <p>
                    <h3>
-               
+                  
                     <?php 
             
+
                      echo '<h3>';
                         echo 'Order Number: ';
                     print_r(  $ORDER->id );
@@ -40,6 +41,7 @@
                          $item = substr($str_arr[$x] , 0 ,stripos($str_arr[$x],",\"price\""));
                          $item = str_replace("\"name\":","",$item);
                          $item = str_replace("\"quantity\":","",$item);
+                         $item = str_replace("\"location\":","",$item);
                          $item_array = explode (",", $item);
                          $item_name     = $item_array[0];
                          $item_name = str_replace("\"","",$item_name); 
@@ -58,15 +60,19 @@
                   {{-- {{ $details['price']}} --}}
                    {{-- {{$item}} --}}
                    {{-- </h3>
-                   </p> --}}
-                  <a href="{{ route('chef.edit', ['chef' => $ORDER->id ] )}}">Process</a>
+                 //  </p> --}}
+                  <a href="{{ route('Delievery.edit', ['Delievery' => $ORDER->id ] )}}">Process</a>
                 <hr size="30" color="black">
                
                 
                    {{-- @endforeach --}}
                    @empty
                    <p>No Orders yet</p>
-                   @endforelse                   
+                   @endforelse
+
+
+
+                   
                 </div>
             </div>
         </section>
